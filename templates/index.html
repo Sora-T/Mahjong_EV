@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>収支±0になる順位計算</title>
+</head>
+<body>
+    <h1>収支±0になる順位計算</h1>
+    <form method="post">
+        <label for="prize1">1位の賞金:</label>
+        <input type="number" id="prize1" name="prize1" required><br><br>
+        
+        <label for="prize2">2位の賞金:</label>
+        <input type="number" id="prize2" name="prize2" required><br><br>
+        
+        <label for="prize3">3位の賞金:</label>
+        <input type="number" id="prize3" name="prize3" required><br><br>
+        
+        <label for="prize4">4位の賞金:</label>
+        <input type="number" id="prize4" name="prize4" required><br><br>
+        
+        <label for="entry_fee">場所代:</label>
+        <input type="number" id="entry_fee" name="entry_fee" required><br><br>
+        
+        <label for="chip_value">1枚あたりのチップの金額:</label>
+        <input type="number" id="chip_value" name="chip_value" required><br><br>
+        
+        <button type="submit">計算</button>
+    </form>
+    
+    {% if result %}
+        <h2>枚数ごとの収支±0になる平均順位:</h2>
+        <ul>
+        {% for res in result %}
+            <li>{{ res }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
